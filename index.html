@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>By Stazykk</title>
+  </head>
+  <body>
+    <h1>Stazy Discord Embed Generator</h1>
+
+    <label for="title-input">Título:</label>
+    <input type="text" id="title-input" placeholder="Digite o título">
+
+    <label for="description-input">Descrição:</label>
+    <input type="text" id="description-input" placeholder="Digite a descrição">
+
+    <label for="link-input">Link da imagem:</label>
+    <input type="text" id="link-input" placeholder="Coloque a URL de uma imagem">
+
+    <button onclick="atualizarMetaTags()">Gerar link!</button>
+
+    <p>Link gerado:</p>
+    <a id="link-gerado" href="#">Aguarde! estou gerando um link</a>
+
+    <script>
+      function atualizarMetaTags() {
+        var title = document.getElementById("title-input").value;
+        var description = document.getElementById("description-input").value;
+        var link = document.getElementById("link-input").value;
+
+        var metaTags = document.getElementsByTagName("meta");
+
+        for (var i = 0; i < metaTags.length; i++) {
+          if (metaTags[i].getAttribute("property") === "og:title") {
+            metaTags[i].setAttribute("content", title);
+          }
+          if (metaTags[i].getAttribute("property") === "og:description") {
+            metaTags[i].setAttribute("content", description);
+          }
+          if (metaTags[i].getAttribute("property") === "og:image") {
+            metaTags[i].setAttribute("content", link);
+          }
+        }
+
+        var linkGerado = document.getElementById("link-gerado");
+        linkGerado.href = "https://stazykk.github.io/?title=" + encodeURIComponent(title) + "&description=" + encodeURIComponent(description) + "&link=" + encodeURIComponent(link);
+        linkGerado.textContent = linkGerado.href;
+      }
+    </script>
+  </body>
+</html>
