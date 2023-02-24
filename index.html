@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>stazy</title>
+	<style>
+		body {
+			background-color: #2A2046;
+		}
+		.texto {
+			color: #FD6635;
+			text-align: center;
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			overflow: hidden;
+			white-space: nowrap;
+			animation: escrever 4s steps(30) forwards;
+		}
+		@keyframes escrever {
+			from { width: 0; }
+			to { width: 100%; }
+		}
+	</style>
+</head>
+<body>
+	<div class="texto">
+		<h1>Um dia eu vou terminar isso.</h1>
+		<p>- Stazy :D</p>
+	</div>
+</body>
+</html>
