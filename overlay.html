@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Stazy - Overlay</title>
+    <meta content="Stazy!" property="og:title" />
+    <meta content="As configurações que eu uso no Overlay podem ser baixadas aqui" property="og:description" />
+    <meta content="https://media.discordapp.net/attachments/980846959164293171/1079541789201006753/images_5.jpg" property="og:image" />
+    <meta content="#fffffff" data-react-helmet="true"/>
+    <style>
+      body {
+        background-color: black;
+        color: white;
+        text-align: center;
+      }
+      .center {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .circle {
+        display: inline-block;
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin-bottom: 20px;
+      }
+      .circle img {
+        width: 100%;
+        height: auto;
+      }
+      .text {
+        display: inline-block;
+        vertical-align: top;
+        margin-left: 20px;
+        font-size: 24px;
+      }
+      .fade {
+        opacity: 0;
+        transition: opacity 3s ease-in-out;
+      }
+      .fade-in {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+        <div class="circle">
+          <img src="anya.png" alt="anya" />
+        </div>
+        <div class="text">
+          <a href="Overlay.cfg" download></a>
+          <p>Download iniciado</p>
+        </div>
+    <script>
+      const fadeDiv = document.querySelector(".fade");
+      fadeDiv.classList.add("fade-in");
+    </script>
+  </body>
+</html>
